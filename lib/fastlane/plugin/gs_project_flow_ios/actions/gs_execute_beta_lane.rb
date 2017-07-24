@@ -1,6 +1,6 @@
 module Fastlane
   module Actions
-    class GsBeforeAllAction < Action
+    class GsExecuteBetaLaneAction < Action
       def self.run(params)
         # require 'fastlane/plugin/gs_versioning'
         # require 'fastlane/plugin/versioning'
