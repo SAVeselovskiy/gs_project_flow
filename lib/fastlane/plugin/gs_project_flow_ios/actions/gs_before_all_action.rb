@@ -20,7 +20,7 @@ module Fastlane
         # CocoapodsAction.run(use_bundle_exec: false) #, clean: true, integrate: true, ansi: true)
         action = 'cocoapods'
         class_ref = Actions.action_class_ref(action)
-        UI.message("class ref = ")
+        UI.message("class ref = " + Dir.pwd)
         r = Runner.new
         parameters = {:use_bundle_exec => false}
         r.execute_action(action, class_ref, [parameters])
