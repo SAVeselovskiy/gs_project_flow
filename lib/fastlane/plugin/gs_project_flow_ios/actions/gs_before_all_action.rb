@@ -17,7 +17,11 @@ module Fastlane
         end
 
         # cocoapods(use_bundle_exec: false)
-        CocoapodsAction.run(use_bundle_exec: false, clean: true, integrate: true, ansi: true)
+        # CocoapodsAction.run(use_bundle_exec: false) #, clean: true, integrate: true, ansi: true)
+        action = 'cocoapods'
+        class_ref = Actions.action_class_ref(action)
+        r = Runner.new
+        r.execute_action(action, class_ref, [parameters])
       end
 
       def self.description
