@@ -16,7 +16,8 @@ module Fastlane
           UI.important("Use custom ITC screenshots.")
         end
 
-        cocoapods(use_bundle_exec: false)
+        # cocoapods(use_bundle_exec: false)
+        CocoapodsAction.run(use_bundle_exec: false)
       end
 
       def self.description
