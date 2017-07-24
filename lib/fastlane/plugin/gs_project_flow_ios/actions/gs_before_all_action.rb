@@ -23,7 +23,7 @@ module Fastlane
         UI.message("class ref = " + Dir.pwd)
         r = Runner.new
         parameters = {:use_bundle_exec => false}
-        r.execute_action(action, class_ref, [parameters])
+        r.execute_action(action, class_ref, [parameters], custom_dir: '.')
       end
 
       def self.description
