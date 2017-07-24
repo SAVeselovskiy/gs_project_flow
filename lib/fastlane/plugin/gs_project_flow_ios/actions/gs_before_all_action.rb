@@ -2,7 +2,7 @@ module Fastlane
   module Actions
     class GsBeforeAllAction < Action
       def self.run(params)
-        # require ''
+        require 'cocoapods'
 # if custom meta directory specified in .env file rename it to 'metadata'. It will delete default 'metadata' dir
         unless ENV["ITC_META_DIR"].nil?
           system ("rm -rf metadata")
