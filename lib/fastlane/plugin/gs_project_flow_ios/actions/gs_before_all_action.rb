@@ -22,6 +22,7 @@ module Fastlane
         class_ref = Actions.action_class_ref(action)
         UI.message("class ref = ")
         r = Runner.new
+        parameters = {:use_bundle_exec => false}
         r.execute_action(action, class_ref, [parameters])
       end
 
