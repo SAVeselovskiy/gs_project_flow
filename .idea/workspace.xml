@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c9f38fb0-3699-4300-8c01-74361c746933" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_beta_lane.rb" afterPath="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_beta_lane.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/helper/gs_project_flow_ios_helper.rb" afterPath="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/helper/gs_project_flow_ios_helper.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/version.rb" afterPath="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/version.rb" />
     </list>
     <ignored path="fastlane-plugin-gs_project_flow_ios.iws" />
@@ -26,8 +27,8 @@
       <file leaf-file-name="gs_before_all_action.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_before_all_action.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="52" />
+            <state relative-caret-position="165">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -46,8 +47,8 @@
       <file leaf-file-name="gs_execute_beta_lane.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_beta_lane.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+            <state relative-caret-position="195">
+              <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -56,8 +57,8 @@
       <file leaf-file-name="gs_project_flow_ios_helper.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/helper/gs_project_flow_ios_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="68" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
+            <state relative-caret-position="525">
+              <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -407,12 +408,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1500631746757</updated>
-      <workItem from="1500631748392" duration="20334000" />
+      <workItem from="1500631748392" duration="21102000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20334000" />
+    <option name="totallyTimeSpent" value="21102000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1200" extended-state="0" />
@@ -490,26 +491,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_before_all_action.rb">
+    <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/helper/gs_project_flow_ios_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="52" />
+        <state relative-caret-position="525">
+          <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/helper/gs_project_flow_ios_helper.rb">
+    <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_before_all_action.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="68" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
+        <state relative-caret-position="165">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_beta_lane.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+        <state relative-caret-position="195">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
           <folding />
         </state>
       </provider>

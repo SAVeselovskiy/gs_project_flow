@@ -18,7 +18,7 @@ module Fastlane
         r.execute_action(action, local_class_ref, [parameters], custom_dir: custom_dir, from_action: from_action)
       end
 
-      def self.generateReleaseNotes(cmd,  aliasServer, version, lang = nil)
+      def generateReleaseNotes(cmd,  aliasServer, version, lang = nil)
         cmnd = cmd
         if lang != nil
           cmnd = cmnd+lang
@@ -26,6 +26,11 @@ module Fastlane
           raise "Language is required for release notes generating."
         end
         require 'fastlane/plugin/gs_deliver'
+        # params = {cmd:cmnd,
+        #           lang: lang,
+        #           alias:aliasServer,
+        #           displayVersionName:version}
+        # text = execute_action('gs_get_release_notes', params)
         text = GsGetReleaseNotes.run(cmd:cmnd,
                              lang: lang,
                              alias:aliasServer,

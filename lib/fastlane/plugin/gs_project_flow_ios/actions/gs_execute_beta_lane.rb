@@ -7,7 +7,10 @@ module Fastlane
         # match(type: "appstore") # more information: https://codesigning.guide
         # Increment the build number (not the version number)
         UI.message("alias = " + params[:alias])
-        v = GsIncrementBetaVersionAction.run(path:Fastlane::Helper::GsProjectFlowIosHelper.get_versions_path)
+
+        v = Helper::GsProjectFlowIosHelper.new.execute_action('gs_increment_beta_version', {path:Helper::GsProjectFlowIosHelper.get_versions_path})
+
+        # v = GsIncrementBetaVersionAction.run(path:Fastlane::Helper::GsProjectFlowIosHelper.get_versions_path)
         version_name = v.major.to_s + "." + v.minor.to_s + "." + v.build.to_s
         IncrementBuildNumberInPlist.run(xcodeproj:ENV["xcodeproj"],
           target:ENV["target"],
