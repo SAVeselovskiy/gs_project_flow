@@ -2,21 +2,21 @@ module Fastlane
   module Actions
     class GsExecuteBetaLaneAction < Action
       def self.run(params)
-        # require 'fastlane/plugin/gs_versioning'
-        # require 'fastlane/plugin/versioning'
-        # # match(type: "appstore") # more information: https://codesigning.guide
-        # # Increment the build number (not the version number)
-        # v = GsIncrementBetaVersionAction.run(path:ENV["path_to_versions"])
-        # version_name = v.major.to_s + "." + v.minor.to_s + "." + v.build.to_s
-        # IncrementBuildNumberInPlist.run(xcodeproj:ENV["xcodeproj"],
-        #   target:ENV["target"],
-        #   build_number: v.build.to_s
-        # )
-        # IncrementVersionNumberInPlist.run(
-        #   version_number: v.major.to_s + "." + v.minor.to_s + ".0",
-        #   xcodeproj: ENV["xcodeproj"],
-        #   target: ENV["target"]
-        # )
+        require 'fastlane/plugin/gs_versioning'
+        require 'fastlane/plugin/versioning'
+        # match(type: "appstore") # more information: https://codesigning.guide
+        # Increment the build number (not the version number)
+        v = GsIncrementBetaVersionAction.run(path:Fastlane::Helper::GsProjectFlowIosHelper.get_versions_path)
+        version_name = v.major.to_s + "." + v.minor.to_s + "." + v.build.to_s
+        IncrementBuildNumberInPlist.run(xcodeproj:ENV["xcodeproj"],
+          target:ENV["target"],
+          build_number: v.build.to_s
+        )
+        IncrementVersionNumberInPlist.run(
+          version_number: v.major.to_s + "." + v.minor.to_s + ".0",
+          xcodeproj: ENV["xcodeproj"],
+          target: ENV["target"]
+        )
         #
         # generateReleaseNotes("fileBeta", ENV["ALIAS"], version_name, "Ru")
         # generateReleaseNotes("fileBeta", ENV["ALIAS"], version_name, "En")

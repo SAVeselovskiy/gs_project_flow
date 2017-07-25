@@ -16,18 +16,10 @@ module Fastlane
           UI.important("Use custom ITC screenshots.")
         end
 
-        # cocoapods(use_bundle_exec: false)
-        # CocoapodsAction.run(use_bundle_exec: false) #, clean: true, integrate: true, ansi: true)
         action = 'cocoapods'
         parameters = {:use_bundle_exec => false}
 
         Fastlane::Helper::GsProjectFlowIosHelper.new.execute_action(action,parameters)
-
-        # class_ref = Actions.action_class_ref(action)
-        # UI.message("class ref = " + Dir.pwd)
-        # r = Runner.new
-        #
-        # r.execute_action(action, class_ref, [parameters], custom_dir: '.')
       end
 
       def self.description
