@@ -19,11 +19,16 @@ module Fastlane
         # cocoapods(use_bundle_exec: false)
         # CocoapodsAction.run(use_bundle_exec: false) #, clean: true, integrate: true, ansi: true)
         action = 'cocoapods'
-        class_ref = Actions.action_class_ref(action)
-        UI.message("class ref = " + Dir.pwd)
-        r = Runner.new
         parameters = {:use_bundle_exec => false}
-        r.execute_action(action, class_ref, [parameters], custom_dir: '.')
+
+        require '../../../../../lib/fastlane/plugin/gs_project_flow_ios/helper/gs_project_flow_ios_helper'
+        GsProjectFlowIosHelper.new.execute_action(action,parameters)
+
+        # class_ref = Actions.action_class_ref(action)
+        # UI.message("class ref = " + Dir.pwd)
+        # r = Runner.new
+        #
+        # r.execute_action(action, class_ref, [parameters], custom_dir: '.')
       end
 
       def self.description

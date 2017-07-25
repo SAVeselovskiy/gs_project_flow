@@ -8,6 +8,12 @@ module Fastlane
         return Dir.pwd+"/../../../versions.json"
       end
 
+      def execute_action(action, parameters, class_ref: nil, custom_dir: '.', from_action: false)
+        local_class_ref = Actions.action_class_ref(action) if class_ref.nil? else local_class_ref = class_ref
+        r = Runner.new
+        r.execute_action(action, local_class_ref, [parameters], custom_dir: custom_dir, from_action: from_action)
+      end
+
       def self.show_message
         UI.message("Hello from the gs_project_flow_ios plugin helper!")
       end
