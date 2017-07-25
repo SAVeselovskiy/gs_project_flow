@@ -17,22 +17,21 @@ module Fastlane
           xcodeproj: ENV["xcodeproj"],
           target: ENV["target"]
         )
-        #
-        # generateReleaseNotes("fileBeta", ENV["ALIAS"], version_name, "Ru")
-        # generateReleaseNotes("fileBeta", ENV["ALIAS"], version_name, "En")
-        #
+        ruText = Fastlane::Helper::GsProjectFlowIosHelpergenerateReleaseNotes("fileBeta", ENV["ALIAS"], version_name, "Ru")
+        enText = Fastlane::Helper::GsProjectFlowIosHelpergenerateReleaseNotes("fileBeta", ENV["ALIAS"], version_name, "En")
+
         # ruText = FileHelper.read(Dir.pwd + "/../../../notes/" + ENV["ALIAS"] + "/" + version_name + "_Ru.txt")
         # enText = FileHelper.read(Dir.pwd + "/../../../notes/" + ENV["ALIAS"] + "/" + version_name + "_En.txt")
-        #
-        # require 'date'
-        # current_time = DateTime.now
-        # time_string = current_time.strftime "%d.%m.%Y %H-%M"
-        # crashlytics_changelog = time_string + "\n" + ruText + "\n\n" + enText
-        # Dir.chdir ".." do
-        #   UI.message(Dir.pwd)
-        #   sh "chmod 744 ./DeleteDerrivedData.sh"
-        #   sh Dir.pwd+"/DeleteDerrivedData.sh"
-        # end
+
+        require 'date'
+        current_time = DateTime.now
+        time_string = current_time.strftime "%d.%m.%Y %H-%M"
+        crashlytics_changelog = time_string + "\n" + ruText + "\n\n" + enText
+        Dir.chdir ".." do
+          UI.message(Dir.pwd)
+          sh "chmod 744 ./DeleteDerrivedData.sh"
+          sh Dir.pwd+"/DeleteDerrivedData.sh"
+        end
         # gym(scheme: ENV["APP_SCHEME"],
         #   export_method:"ad-hoc") # Build your app - more options available
         # crashlytics(notes: crashlytics_changelog,
