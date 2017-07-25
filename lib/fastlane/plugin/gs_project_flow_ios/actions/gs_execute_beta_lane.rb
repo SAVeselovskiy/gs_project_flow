@@ -17,8 +17,8 @@ module Fastlane
           xcodeproj: ENV["xcodeproj"],
           target: ENV["target"]
         )
-        ruText = Fastlane::Helper::GsProjectFlowIosHelpergenerateReleaseNotes("fileBeta", ENV["ALIAS"], version_name, "Ru")
-        enText = Fastlane::Helper::GsProjectFlowIosHelpergenerateReleaseNotes("fileBeta", ENV["ALIAS"], version_name, "En")
+        ruText = Fastlane::Helper::GsProjectFlowIosHelpergenerateReleaseNotes("fileBeta", params[:alias], version_name, "Ru")
+        enText = Fastlane::Helper::GsProjectFlowIosHelpergenerateReleaseNotes("fileBeta", params[:alias], version_name, "En")
 
         # ruText = FileHelper.read(Dir.pwd + "/../../../notes/" + ENV["ALIAS"] + "/" + version_name + "_Ru.txt")
         # enText = FileHelper.read(Dir.pwd + "/../../../notes/" + ENV["ALIAS"] + "/" + version_name + "_En.txt")
@@ -63,11 +63,11 @@ module Fastlane
 
       def self.available_options
         [
-            # FastlaneCore::ConfigItem.new(key: :your_option,
-            #                         env_name: "GS_PROJECT_FLOW_IOS_YOUR_OPTION",
-            #                      description: "A description of your option",
-            #                         optional: false,
-            #                             type: String)
+            FastlaneCore::ConfigItem.new(key: :alias,
+                                    env_name: "ALIAS",
+                                 description: "project system alias",
+                                    optional: false,
+                                        type: String)
         ]
       end
 
