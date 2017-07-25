@@ -5,7 +5,7 @@ module Fastlane
       # as `Helper::GsProjectFlowIosHelper.your_method`
       #
       def self.get_versions_path
-        return Dir.pwd+"/../../../versions.json"
+        return Dir.pwd+"/../../versions.json"
       end
 
       def execute_action(action, parameters, class_ref: nil, custom_dir: '.', from_action: false)
