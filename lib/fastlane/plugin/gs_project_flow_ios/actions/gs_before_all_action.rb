@@ -21,7 +21,7 @@ module Fastlane
         action = 'cocoapods'
         parameters = {:use_bundle_exec => false}
 
-        require '../helper/gs_project_flow_ios_helper'
+        require 'gs_project_flow_ios_helper'
         GsProjectFlowIosHelper.new.execute_action(action,parameters)
 
         # class_ref = Actions.action_class_ref(action)
