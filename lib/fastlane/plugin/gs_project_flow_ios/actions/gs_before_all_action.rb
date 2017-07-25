@@ -21,7 +21,7 @@ module Fastlane
         action = 'cocoapods'
         parameters = {:use_bundle_exec => false}
 
-        Fastlane::GsProjectFlowIosHelper.new.execute_action(action,parameters)
+        Fastlane::Helper::GsProjectFlowIosHelper.new.execute_action(action,parameters)
 
         # class_ref = Actions.action_class_ref(action)
         # UI.message("class ref = " + Dir.pwd)
