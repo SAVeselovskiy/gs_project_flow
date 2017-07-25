@@ -9,7 +9,7 @@ module Fastlane
       end
 
       def execute_action(action, parameters, class_ref: nil, custom_dir: '.', from_action: false)
-        unless class_ref.nil?
+        if class_ref.nil?
           local_class_ref = Actions.action_class_ref(action)
         else
           local_class_ref = class_ref
