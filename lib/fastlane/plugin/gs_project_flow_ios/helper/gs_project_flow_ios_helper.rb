@@ -31,10 +31,10 @@ module Fastlane
         #           alias:aliasServer,
         #           displayVersionName:version}
         # text = execute_action('gs_get_release_notes', params)
-        text = GsGetReleaseNotes.run(cmd:cmnd,
+        text = GsGetReleaseNotesAction.run(FastlaneCore::Configuration.create(GsGetReleaseNotesAction.available_options,{cmd:cmnd,
                              lang: lang,
                              alias:aliasServer,
-                             displayVersionName:version)
+                             displayVersionName:version}))
         # UI.message("Check exist " + Dir.pwd + "/../../../notes/" + aliasServer + "/" + version + "_" + lang + ".txt")
         # if !File.exist?(Dir.pwd + "/../../../notes/" + aliasServer + "/" + version + "_" + lang + ".txt")
         #   raise "Не удалось сгенерировать ReleaseNotes"
