@@ -4,7 +4,6 @@ module Fastlane
       def self.run(params)
         require 'fastlane/plugin/gs_versioning'
         require 'fastlane/plugin/versioning'
-        require 'fastlanecore'
         # match(type: "appstore") # more information: https://codesigning.guide
         # Increment the build number (not the version number)
         UI.message("alias = " + params[:alias])
