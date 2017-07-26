@@ -12,6 +12,7 @@ module Fastlane
         arg = FastlaneCore::Configuration.create(GsIncrementBetaVersionAction.available_options, {path:Helper::GsProjectFlowIosHelper.get_versions_path})
         v = GsIncrementBetaVersionAction.run(arg)
         version_name = v.major.to_s + "." + v.minor.to_s + "." + v.build.to_s
+        UI.message('version' + version_name)
         Helper::GsProjectFlowIosHelper.new.execute_action('increment_build_number_in_plist', {xcodeproj:ENV["xcodeproj"],
                                                                                               target:ENV["target"],
                                                                                               build_number: v.build.to_s})
