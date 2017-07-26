@@ -13,22 +13,13 @@ module Fastlane
         v = GsIncrementBetaVersionAction.run(arg)
         version_name = v.major.to_s + "." + v.minor.to_s + "." + v.build.to_s
         UI.message('version' + version_name)
-        Helper::GsProjectFlowIosHelper.new.execute_action('increment_build_number_in_plist', {xcodeproj:ENV["xcodeproj"],
-                                                                                              target:ENV["target"],
-                                                                                              build_number: v.build.to_s})
-        # IncrementBuildNumberInPlist.run(xcodeproj:ENV["xcodeproj"],
-        #   target:ENV["target"],
-        #   build_number: v.build.to_s
-        # )
+        # Helper::GsProjectFlowIosHelper.new.execute_action('increment_build_number_in_plist', {xcodeproj:ENV["xcodeproj"], target:ENV["target"], build_number: v.build.to_s})
+        IncrementBuildNumberInPlist.run(FastlaneCore::Configuration.create(IncrementBuildNumberInPlist.available_options, {xcodeproj:ENV["xcodeproj"], target:ENV["target"], build_number: v.build.to_s}))
 
-        Helper::GsProjectFlowIosHelper.new.execute_action('increment_build_version_in_plist', {version_number: v.major.to_s + "." + v.minor.to_s + ".0",
-                                                                                                                                                                                                             xcodeproj: ENV["xcodeproj"],
-                                                                                                                                                                                                             target: ENV["target"]})
-        # IncrementVersionNumberInPlist.run(
-        #   version_number: v.major.to_s + "." + v.minor.to_s + ".0",
-        #   xcodeproj: ENV["xcodeproj"],
-        #   target: ENV["target"]
-        # )
+        # Helper::GsProjectFlowIosHelper.new.execute_action('increment_build_version_in_plist', {version_number: v.major.to_s + "." + v.minor.to_s + ".0",
+        #                                                                                                                                                                                                      xcodeproj: ENV["xcodeproj"],
+        #                                                                                                                                                                                                      target: ENV["target"]})
+        IncrementVersionNumberInPlist.run(FastlaneCore::Configuration.create(IncrementVersionNumberInPlist.available_options, {version_number: v.major.to_s + "." + v.minor.to_s + ".0", xcodeproj: ENV["xcodeproj"], target: ENV["target"]}))
 
         ruText = Fastlane::Helper::GsProjectFlowIosHelper.generateReleaseNotes("fileBeta", params[:alias], version_name, "Ru")
         enText = Fastlane::Helper::GsProjectFlowIosHelper.generateReleaseNotes("fileBeta", params[:alias], version_name, "En")
