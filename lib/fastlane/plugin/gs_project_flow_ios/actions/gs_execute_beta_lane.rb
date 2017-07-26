@@ -12,17 +12,25 @@ module Fastlane
 
         # v = GsIncrementBetaVersionAction.run(path:Fastlane::Helper::GsProjectFlowIosHelper.get_versions_path)
         version_name = v.major.to_s + "." + v.minor.to_s + "." + v.build.to_s
-        IncrementBuildNumberInPlist.run(xcodeproj:ENV["xcodeproj"],
-          target:ENV["target"],
-          build_number: v.build.to_s
-        )
-        IncrementVersionNumberInPlist.run(
-          version_number: v.major.to_s + "." + v.minor.to_s + ".0",
-          xcodeproj: ENV["xcodeproj"],
-          target: ENV["target"]
-        )
-        ruText = Fastlane::Helper::GsProjectFlowIosHelpergenerateReleaseNotes("fileBeta", params[:alias], version_name, "Ru")
-        enText = Fastlane::Helper::GsProjectFlowIosHelpergenerateReleaseNotes("fileBeta", params[:alias], version_name, "En")
+        Helper::GsProjectFlowIosHelper.new.execute_action('increment_build_number_in_plist', {xcodeproj:ENV["xcodeproj"],
+                                                                                              target:ENV["target"],
+                                                                                              build_number: v.build.to_s})
+        # IncrementBuildNumberInPlist.run(xcodeproj:ENV["xcodeproj"],
+        #   target:ENV["target"],
+        #   build_number: v.build.to_s
+        # )
+
+        Helper::GsProjectFlowIosHelper.new.execute_action('increment_build_version_in_plist', {version_number: v.major.to_s + "." + v.minor.to_s + ".0",
+                                                                                               xcodeproj: ENV["xcodeproj"],
+                                                                                               target: ENV["target"]})
+        # IncrementVersionNumberInPlist.run(
+        #   version_number: v.major.to_s + "." + v.minor.to_s + ".0",
+        #   xcodeproj: ENV["xcodeproj"],
+        #   target: ENV["target"]
+        # )
+
+        ruText = Fastlane::Helper::GsProjectFlowIosHelper.generateReleaseNotes("fileBeta", params[:alias], version_name, "Ru")
+        enText = Fastlane::Helper::GsProjectFlowIosHelper.generateReleaseNotes("fileBeta", params[:alias], version_name, "En")
 
         # ruText = FileHelper.read(Dir.pwd + "/../../../notes/" + ENV["ALIAS"] + "/" + version_name + "_Ru.txt")
         # enText = FileHelper.read(Dir.pwd + "/../../../notes/" + ENV["ALIAS"] + "/" + version_name + "_En.txt")
@@ -36,6 +44,7 @@ module Fastlane
           sh "chmod 744 ./DeleteDerrivedData.sh"
           sh Dir.pwd+"/DeleteDerrivedData.sh"
         end
+
         # gym(scheme: ENV["APP_SCHEME"],
         #   export_method:"ad-hoc") # Build your app - more options available
         # crashlytics(notes: crashlytics_changelog,
