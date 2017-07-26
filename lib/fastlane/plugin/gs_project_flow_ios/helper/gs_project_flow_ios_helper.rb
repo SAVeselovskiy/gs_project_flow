@@ -31,7 +31,7 @@ module Fastlane
         #           alias:aliasServer,
         #           displayVersionName:version}
         # text = execute_action('gs_get_release_notes', params)
-        text = GsGetReleaseNotesAction.run(FastlaneCore::Configuration.create(GsGetReleaseNotesAction.available_options,{cmd:cmnd,
+        text = Actions::GsGetReleaseNotesAction.run(FastlaneCore::Configuration.create(Actions::GsGetReleaseNotesAction.available_options,{cmd:cmnd,
                              lang: lang,
                              alias:aliasServer,
                              displayVersionName:version}))
