@@ -31,11 +31,11 @@ module Fastlane
         current_time = DateTime.now
         time_string = current_time.strftime "%d.%m.%Y %H-%M"
         crashlytics_changelog = time_string + "\n" + ruText + "\n\n" + enText
-        Dir.chdir ".." do
+        # Dir.chdir ".." do
           UI.message(Dir.pwd)
           sh "chmod 744 ./DeleteDerrivedData.sh"
           sh Dir.pwd+"/DeleteDerrivedData.sh"
-        end
+        # end
 
         Actions::GymAction.run(FastlaneCore::Configuration.create(GymAction.available_options,{scheme: ENV["APP_SCHEME"],
             export_method:"ad-hoc"})) # Build your app - more options available
