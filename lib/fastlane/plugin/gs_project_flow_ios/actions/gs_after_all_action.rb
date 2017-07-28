@@ -1,6 +1,6 @@
 module Fastlane
   module Actions
-    class GsBeforeAllAction < Action
+    class GsAfterAllAction < Action
       def self.run(params)
         action = 'cocoapods'
         parameters = {:use_bundle_exec => false}
