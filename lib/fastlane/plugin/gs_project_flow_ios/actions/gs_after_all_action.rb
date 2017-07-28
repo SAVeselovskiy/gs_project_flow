@@ -3,9 +3,6 @@ module Fastlane
     class GsAfterAllAction < Action
       def self.run(params)
         action = 'cocoapods'
-        parameters = {:use_bundle_exec => false}
-
-        Fastlane::Helper::GsProjectFlowIosHelper.new.execute_action(action,parameters)
 
 
         version_name, v = Helper::GsProjectFlowIosHelper.version_for_lane(param[:lane])

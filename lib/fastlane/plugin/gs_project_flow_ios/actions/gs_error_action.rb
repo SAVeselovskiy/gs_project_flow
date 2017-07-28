@@ -2,9 +2,9 @@ module Fastlane
   module Actions
     class GsErrorAction < Action
       def self.run(params)
-        version_name, v = Helper::GsProjectFlowIosHelper.version_for_lane(lane)
+        version_name, v = Helper::GsProjectFlowIosHelper.version_for_lane(params[:lane])
         # ENV["PROJECT_NAME"] - переменка окружения, используемая в iOS, как читаемое название проекта + ключ в json файлике версий
-        message = ENV["PROJECT_NAME"] + " " + version_name + " build has failed. Reason:\n <code>" + exception.message + "</code>"
+        message = ENV["PROJECT_NAME"] + " " + version_name + " build has failed. Reason:\n <code>" + params[:exception].message + "</code>"
         Helper::GsProjectFlowIosHelper.send_report(message,Helper::GsProjectFlowIosHelper::BuildState::FAILURE, params[:lane])
       end
 
@@ -30,7 +30,11 @@ module Fastlane
             FastlaneCore::ConfigItem.new(key: :lane,
                                  description: "A description of your option",
                                     optional: false,
-                                        type: Symbol)
+                                        type: Symbol),
+            FastlaneCore::ConfigItem.new(key: :exception,
+                                         description: "A description of your option",
+                                         optional: false,
+                                         is_string: false)
         ]
       end
 
