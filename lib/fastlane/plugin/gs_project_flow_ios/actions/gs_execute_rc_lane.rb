@@ -29,7 +29,7 @@ module Fastlane
         testflight_changelog = ruText + "\n\n" + enText
         UI.message("changelog = " + testflight_changelog)
 
-        appDescription = Helper::FileHelper.read (Dir.pwd + "/metadata/ru/description.txt")
+        appDescription = Helper::FileHelper.read (Dir.pwd + "fastlane/metadata/ru/description.txt")
 
 
 
