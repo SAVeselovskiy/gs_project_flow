@@ -21,8 +21,8 @@ module Fastlane
         Actions::IncrementVersionNumberInPlistAction.run(FastlaneCore::Configuration.create(Actions::IncrementVersionNumberInPlistAction.available_options,
                                                                                    {version_number: v.major.to_s + "." + v.minor.to_s + ".0", xcodeproj: ENV["xcodeproj"], target: ENV["target"]}))
 
-        ruText = fastlaneHelper.generateReleaseNotes("fileClosed", params[:alias], version_name, "Ru")
-        enText = fastlaneHelper.generateReleaseNotes("fileClosed", params[:alias], version_name, "En")
+        ruText = fastlaneHelper.generateReleaseNotes("fileClosed", params[:alias], v.major.to_s + "." + v.minor.to_s, "Ru")
+        enText = fastlaneHelper.generateReleaseNotes("fileClosed", params[:alias], v.major.to_s + "." + v.minor.to_s, "En")
 
         # ruText = FileHelper.read(Dir.pwd + "/../../../notes/" + ENV["ALIAS"] + "/" + version_name + "_Ru.txt")
         # enText = FileHelper.read(Dir.pwd + "/../../../notes/" + ENV["ALIAS"] + "/" + version_name + "_En.txt")
