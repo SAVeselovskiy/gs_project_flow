@@ -40,7 +40,7 @@ module Fastlane
 
         end
         if cmd != ""
-          Actions::GsExecuteCommandAction.run(FastlaneCore::Configuration.create(GsStartExternalTestingAction.available_options,options))
+          Actions::GsExecuteCommandAction.run(FastlaneCore::Configuration.create(GsExecuteCommandAction.available_options,options))
         end
       end
 
