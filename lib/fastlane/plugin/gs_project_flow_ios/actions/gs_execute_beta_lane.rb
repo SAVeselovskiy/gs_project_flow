@@ -44,7 +44,7 @@ module Fastlane
                                                                                                        groups: ENV["CRASHLYTICS_GROUPS"]}))
 
 
-        Actions::GsSaveBetaVersionAction.run(FastlaneCore::Configuration.create(GsSaveBetaVersionAction.available_options,{path:Helper::GsProjectFlowIosHelper.get_versions_path}))
+        Actions::GsSaveBetaVersionAction.run(FastlaneCore::Configuration.create(GsSaveBetaVersionAction.available_options,{version:v, path:Helper::GsProjectFlowIosHelper.get_versions_path}))
         UI.success("✅ App is released to Crashlytics")
         # # You can also use other beta testing services here (run fastlane actions)
       end
