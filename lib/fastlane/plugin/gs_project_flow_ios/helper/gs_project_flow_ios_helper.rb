@@ -107,7 +107,8 @@ module Fastlane
 
           paramsJSON = params.to_json
           require 'json'
-          sh "curl -X POST -H \"Content-Type: application/json\" -d '#{paramsJSON}' http://mobile.geo4.io/bot/releaseBuilder/jobStates"
+          Actions::ShAction.run(FastlaneCore::Configuration.create(Actions::GsGetBetaVersionAction.available_options,
+                                                                   {command:"curl -X POST -H \"Content-Type: application/json\" -d '#{paramsJSON}' http://mobile.geo4.io/bot/releaseBuilder/jobStates"}))
           # sh "sh build_reporter.sh " + chat_id.to_s + " " + message
         end
       end
