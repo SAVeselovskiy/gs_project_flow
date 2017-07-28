@@ -38,10 +38,10 @@ module Fastlane
                    distribute_external: false,
                    beta_app_feedback_email: "cimobdaemon@gmail.com"}
 
-        Dir.chdir ".." do
+        # Dir.chdir ".." do
           sh "chmod 744 ./DeleteDerrivedData.sh"
           sh Dir.pwd+"/DeleteDerrivedData.sh"
-        end
+        # end
         Actions::GymAction.run(FastlaneCore::Configuration.create(GymAction.available_options,{scheme: ENV["APP_SCHEME"],
                                                                                                export_method:"app-store"})) # Build your app - more options available
 
