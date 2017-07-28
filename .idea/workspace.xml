@@ -36,8 +36,8 @@
       <file leaf-file-name="version.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/version.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="30">
+              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -46,10 +46,10 @@
       <file leaf-file-name="gs_execute_beta_lane.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_beta_lane.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="615">
+              <caret line="42" column="91" selection-start-line="42" selection-start-column="91" selection-end-line="42" selection-end-column="91" />
               <folding>
-                <marker date="1501233586000" expanded="true" signature="1710:1946" ph="..." />
+                <marker date="1501234008000" expanded="true" signature="1710:1946" ph="..." />
               </folding>
             </state>
           </provider>
@@ -471,12 +471,12 @@
       <option name="presentableId" value="Default" />
       <updated>1500631746757</updated>
       <workItem from="1500631748392" duration="22600000" />
-      <workItem from="1501060274200" duration="17991000" />
+      <workItem from="1501060274200" duration="18150000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40591000" />
+    <option name="totallyTimeSpent" value="40750000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1200" extended-state="0" />
@@ -627,18 +627,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_beta_lane.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="615">
+          <caret line="42" column="91" selection-start-line="42" selection-start-column="91" selection-end-line="42" selection-end-column="91" />
           <folding>
-            <marker date="1501233586000" expanded="true" signature="1710:1946" ph="..." />
+            <marker date="1501234008000" expanded="true" signature="1710:1946" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/version.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="30">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
           <folding />
         </state>
       </provider>

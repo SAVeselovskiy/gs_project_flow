@@ -40,7 +40,7 @@ module Fastlane
         Actions::GymAction.run(FastlaneCore::Configuration.create(GymAction.available_options,{scheme: ENV["APP_SCHEME"],
             export_method:"ad-hoc"})) # Build your app - more options available
 
-        Actions::CrashlyticsAction.run(FastlaneCore::Configuration.create(GymAction.available_options,{notes: crashlytics_changelog,
+        Actions::CrashlyticsAction.run(FastlaneCore::Configuration.create(CrashlyticsAction.available_options,{notes: crashlytics_changelog,
                                                                                                        groups: ENV["CRASHLYTICS_GROUPS"]}))
 
 
