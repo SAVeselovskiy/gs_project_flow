@@ -7,17 +7,17 @@ module Fastlane
 
         version_name, v = Helper::GsProjectFlowIosHelper.version_for_lane(params[:lane])
         message = ENV["PROJECT_NAME"] + " " + version_name + "<pre> build successful.</pre>"
-        Helper::GsProjectFlowIosHelper.send_report(message,Helper::GsProjectFlowIosHelper::BuildState::SUCCESS,param[:lane])
+        Helper::GsProjectFlowIosHelper.send_report(message,Helper::GsProjectFlowIosHelper::BuildState::SUCCESS,params[:lane])
         cmd = ""
         options = {}
-        if param[:lane] == :beta
+        if params[:lane] == :beta
           cmd = "beta"
           options = {cmd:cmd,
                      displayVersionName:version_name,
                      request: "cmd",
                      alias: ENV["ALIAS"]
           }
-        elsif param[:lane] == :rc
+        elsif params[:lane] == :rc
           cmd = "mv2rc"
           options = {
               cmd:cmd,
@@ -26,7 +26,7 @@ module Fastlane
               request: "cmd",
               alias: ENV["ALIAS"]
           }
-        elsif param[:lane] == :release
+        elsif params[:lane] == :release
           cmd = "rc2release"
           options = {cmd:cmd,
                      displayVersionName:version_name,
