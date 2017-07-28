@@ -1,5 +1,25 @@
 module Fastlane
   module Helper
+
+    class FileHelper
+      def self.read(path)
+        file = File.open(path, "r+")
+        res = file.read
+        file.close
+        res
+      end
+      def self.write(path, str)
+        if not path.include? "."
+          raise "Filepath has incorrect format. You must provide file extension"
+        end
+        require 'fileutils.rb'
+        FileUtils.makedirs(File.dirname(path))
+        file = File.open(path, "w+")
+        file.write(str)
+        file.close
+      end
+    end
+
     class GsProjectFlowIosHelper
       # class methods that you define here become available in your action
       # as `Helper::GsProjectFlowIosHelper.your_method`
@@ -40,6 +60,56 @@ module Fastlane
         #   raise "Не удалось сгенерировать ReleaseNotes"
         # end
         return text
+      end
+
+      def self.version_for_lane(lane)
+        version_name = ""
+        if lane == :beta
+          v = Actions::GsGetBetaVersionAction.run(FastlaneCore::Configuration.create(Actions::GsGetBetaVersionAction.available_options,{path: GsProjectFlowIosHelper.get_versions_path}))
+          version_name = v.major.to_s+ "." + v.minor.to_s + "." + v.build.to_s
+        elsif lane == :rc
+          v = Actions::GsGetRcVersionAction.run(FastlaneCore::Configuration.create(Actions::GsGetRcVersionAction.available_options,{path: GsProjectFlowIosHelper.get_versions_path}))
+          # v = gs_get_rc_version(path: GsProjectFlowIosHelper.get_versions_path)
+          version_name = v.major.to_s+ "." + v.minor.to_s
+        elsif lane == :release
+          v = Actions::GsGetReleaseVersionAction.run(FastlaneCore::Configuration.create(Actions::GsGetReleaseVersionAction.available_options,{path: GsProjectFlowIosHelper.get_versions_path}))
+          # v = gs_get_release_version(path: GsProjectFlowIosHelper.get_versions_path)
+          version_name = v.major.to_s+ "." + v.minor.to_s
+        end
+        return version_name,v
+      end
+
+      module BuildState
+        START = "started"
+        SUCCESS = "successful"
+        FAILURE = "failed"
+      end
+      def self.send_report(message, buildState, lane)
+        Dir.chdir Dir.pwd+"/../../../../" do
+          UI.message(Dir.pwd)
+          params = Hash.new
+          params["state"] = buildState
+          params["alias"] = ENV["ALIAS"]
+
+          if buildState == BuildState::FAILURE
+            params["message"] = message
+          end
+
+          if lane == :beta
+            params["cmd"] = "beta"
+          elsif lane == :rc
+            params["cmd"] = "rc"
+          elsif lane == :release
+            params["cmd"] = "release"
+          end
+
+
+
+          paramsJSON = params.to_json
+          require 'json'
+          sh "curl -X POST -H \"Content-Type: application/json\" -d '#{paramsJSON}' http://mobile.geo4.io/bot/releaseBuilder/jobStates"
+          # sh "sh build_reporter.sh " + chat_id.to_s + " " + message
+        end
       end
 
       def self.show_message

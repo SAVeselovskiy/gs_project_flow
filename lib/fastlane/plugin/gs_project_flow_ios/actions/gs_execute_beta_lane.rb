@@ -37,15 +37,15 @@ module Fastlane
           sh Dir.pwd+"/DeleteDerrivedData.sh"
         end
 
-        # gym(scheme: ENV["APP_SCHEME"],
-        #   export_method:"ad-hoc") # Build your app - more options available
-        # crashlytics(notes: crashlytics_changelog,
-        #   groups: ENV["CRASHLYTICS_GROUPS"]
-        #   )
-        # #
-        # # sh "your_script.sh"
-        # gs_save_beta_version(path:ENV["path_to_versions"], version: v)
-        # UI.success("✅ App is released to Crashlytics")
+        Actions::GymAction.run(FastlaneCore::Configuration.create(GymAction.available_options,{scheme: ENV["APP_SCHEME"],
+            export_method:"ad-hoc"})) # Build your app - more options available
+
+        Actions::CrashlyticsAction.run(FastlaneCore::Configuration.create(GymAction.available_options,{notes: crashlytics_changelog,
+                                                                                                       groups: ENV["CRASHLYTICS_GROUPS"]}))
+
+
+        Actions::GsSaveBetaVersionAction.run(FastlaneCore::Configuration.create(GsSaveBetaVersionAction.available_options,{path:Helper::GsProjectFlowIosHelper.get_versions_path}))
+        UI.success("✅ App is released to Crashlytics")
         # # You can also use other beta testing services here (run fastlane actions)
       end
 
