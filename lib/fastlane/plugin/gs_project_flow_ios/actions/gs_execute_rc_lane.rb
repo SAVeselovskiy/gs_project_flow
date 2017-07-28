@@ -11,6 +11,7 @@ module Fastlane
         version_name = v.major.to_s + "." + v.minor.to_s + "." + v.build.to_s
         UI.message('version' + version_name)
 
+        plist_path = Actions::GetInfoPlistPathAction.run(FastlaneCore::Configuration.create(GetInfoPlistPathAction.available_options,{path: plist_path, key: "ITSAppUsesNonExemptEncryption", value: "false"}))
         Actions::SetInfoPlistValueAction.run(FastlaneCore::Configuration.create(SetInfoPlistValueAction.available_options,{path: plist_path, key: "ITSAppUsesNonExemptEncryption", value: "false"}))
 
         Actions::IncrementBuildNumberInPlistAction.run(FastlaneCore::Configuration.create(Actions::IncrementBuildNumberInPlistAction.available_options,
