@@ -51,7 +51,7 @@ module Fastlane
           Actions::GsRejectLatestVersionAction.run(FastlaneCore::Configuration.create(GsRejectLatestVersionAction.available_options,{app_identifier:ENV["BUNDLE_ID"]}))
         end
 
-        Actions::PilotAction.run(FastlaneCore::Configuration.create(GsRejectLatestVersionAction.available_options,options))
+        Actions::PilotAction.run(FastlaneCore::Configuration.create(PilotAction.available_options,options))
         UI.success("App is released to internal testing")
 
         Actions::GsSaveRcVersionAction.run(FastlaneCore::Configuration.create(GsSaveRcVersionAction.available_options,{path:Helper::GsProjectFlowIosHelper.get_versions_path}))
