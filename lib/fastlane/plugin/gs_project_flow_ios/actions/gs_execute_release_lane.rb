@@ -12,9 +12,9 @@ module Fastlane
         arg = FastlaneCore::Configuration.create(GsIncrementReleaseVersionAction.available_options, {path:Helper::GsProjectFlowIosHelper.get_versions_path})
         v = GsIncrementReleaseVersionAction.run(arg)
         version_name = v.major.to_s + "." + v.minor.to_s
-        ruText = Helper::GsProjectFlowIosHelper.generateReleaseNotes("fileClosed", ENV["ALIAS"], version_name, "Ru")
-        enText = Helper::GsProjectFlowIosHelper.generateReleaseNotes("fileClosed", ENV["ALIAS"], version_name, "En")
-        generateReleaseNotes("fileClosed", ENV["ALIAS"], version_name, "En")
+        ruText = Helper::GsProjectFlowIosHelper.new.generateReleaseNotes("fileClosed", ENV["ALIAS"], version_name, "Ru")
+        enText = Helper::GsProjectFlowIosHelper.new.generateReleaseNotes("fileClosed", ENV["ALIAS"], version_name, "En")
+        # generateReleaseNotes("fileClosed", ENV["ALIAS"], version_name, "En")
 
         Helper::FileHelper.write(Dir.pwd+'/metadata/ru/release_notes.txt', ruText)
         Helper::FileHelper.write(Dir.pwd+'/metadata/en-US/release_notes.txt', enText)
