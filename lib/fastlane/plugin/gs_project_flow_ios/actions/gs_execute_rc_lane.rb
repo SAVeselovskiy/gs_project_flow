@@ -59,12 +59,12 @@ module Fastlane
         Actions::GsExecuteRcLaneAction.moveToReview(version_name)
         UI.success("✅ App status is changed to Waiting For Review")
         options[:distribute_external] = true
-        options[:review_contact_info] = {
-            review_first_name: "MyTestAccount",
-            review_last_name: "MyTestAccount",
-            review_phone_number: "88432000555",
-            review_contact_email: "cimobdaemon@gmail.com",
-        }
+        # options[:review_contact_info] = {
+        #     review_first_name: "MyTestAccount",
+        #     review_last_name: "MyTestAccount",
+        #     review_phone_number: "88432000555",
+        #     review_contact_email: "cimobdaemon@gmail.com",
+        # }
         begin
           Actions::GsMoveRcToBetaReviewAction.run(FastlaneCore::Configuration.create(GsMoveRcToBetaReviewAction.available_options,
                                                                                      options))

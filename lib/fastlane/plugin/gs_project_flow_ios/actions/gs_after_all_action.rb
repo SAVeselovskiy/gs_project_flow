@@ -22,7 +22,7 @@ module Fastlane
           options = {
               cmd:cmd,
               displayVersionName:version_name,
-              build_number:v.build,
+              buildNumber:v.build,
               request: "cmd",
               alias: ENV["ALIAS"]
           }
@@ -30,7 +30,7 @@ module Fastlane
           cmd = "rc2release"
           options = {cmd:cmd,
                      displayVersionName:version_name,
-                     build_number:v.build,
+                     buildNumber:v.build,
                      request: "cmd",
                      alias: ENV["ALIAS"]
           }
