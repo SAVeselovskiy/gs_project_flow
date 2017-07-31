@@ -86,8 +86,8 @@ module Fastlane
         # generateReleaseNotes("fileClosed", ENV["ALIAS"], version_name, "Ru")
         # generateReleaseNotes("fileClosed", ENV["ALIAS"], version_name, "En")
 
-        ruText = Helper::FileHelper.read(Dir.pwd + "/../../../notes/" + ENV["ALIAS"] + "/" + version_name + "_Ru.txt")
-        enText = Helper::FileHelper.read(Dir.pwd + "/../../../notes/" + ENV["ALIAS"] + "/" + version_name + "_En.txt")
+        ruText = Helper::FileHelper.read(Dir.pwd + "/../../notes/" + ENV["ALIAS"] + "/" + version_name + "_Ru.txt")
+        enText = Helper::FileHelper.read(Dir.pwd + "/../../notes/" + ENV["ALIAS"] + "/" + version_name + "_En.txt")
         Helper::FileHelper.write(Dir.pwd+'/metadata/ru/release_notes.txt', ruText)
         Helper::FileHelper.write(Dir.pwd+'/metadata/en-US/release_notes.txt', enText)
         # gym(scheme: ENV["APP_SCHEME"]) # Build your app - more options available

@@ -52,7 +52,7 @@ module Fastlane
         else
           raise "App has got unexpected status. Expected statuses: waitingForReview or PendingDeveloperRelease. Current status: "+s
         end
-        Actions::GsSaveReleaseVersionAction.run(FastlaneCore::Configuration.create(GsSaveReleaseVersionAction.available_options,{path:Helper::GsProjectFlowIosHelper.get_versions_path}))
+        Actions::GsSaveReleaseVersionAction.run(FastlaneCore::Configuration.create(GsSaveReleaseVersionAction.available_options,{version:v, path:Helper::GsProjectFlowIosHelper.get_versions_path}))
 
 
         # s = gs_get_app_status(app_identifier:ENV["BUNDLE_ID"])
