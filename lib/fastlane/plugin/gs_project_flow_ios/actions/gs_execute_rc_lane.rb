@@ -46,8 +46,6 @@ module Fastlane
                                                                                                export_method:"app-store"})) # Build your app - more options available
 
 
-
-
         s = Actions::GsGetAppStatusAction.run(FastlaneCore::Configuration.create(GsGetAppStatusAction.available_options,{app_identifier:ENV["BUNDLE_ID"]}))
         if s == "Pending Developer Release"
           Actions::GsRejectLatestVersionAction.run(FastlaneCore::Configuration.create(GsRejectLatestVersionAction.available_options,{app_identifier:ENV["BUNDLE_ID"]}))
@@ -56,7 +54,7 @@ module Fastlane
         Actions::PilotAction.run(FastlaneCore::Configuration.create(PilotAction.available_options,options))
         UI.success("App is released to internal testing")
 
-        Actions::GsSaveRcVersionAction.run(FastlaneCore::Configuration.create(GsSaveRcVersionAction.available_options,{path:Helper::GsProjectFlowIosHelper.get_versions_path}))
+        Actions::GsSaveRcVersionAction.run(FastlaneCore::Configuration.create(GsSaveRcVersionAction.available_options,{version: v, path:Helper::GsProjectFlowIosHelper.get_versions_path}))
 
         Actions::GsExecuteRcLaneAction.moveToReview(version_name)
         UI.success("✅ App status is changed to Waiting For Review")
