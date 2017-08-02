@@ -28,22 +28,22 @@ module Fastlane
               #skip_metadata: true,
               automatic_release:true,
               submission_information: {
-                  add_id_info_limits_tracking: false,
-                  add_id_info_serves_ads: false,
-                  add_id_info_tracks_action: false,
-                  add_id_info_tracks_install: false,
-                  add_id_info_uses_idfa: false,
+                  add_id_info_limits_tracking: ENV["LIMITS_TRACKING"], #в данном приложении, а также в любом связанном с ним стороннем сервисе используется проверка рекламного идентификатора и применяются пользовательские настройки ограничения трекинга рекламы в iOS.
+                  add_id_info_serves_ads: ENV["IS_ADS_IN_APP_IDFA"],  #Размещение рекламы в приложении
+                  add_id_info_tracks_action: ENV["TRACKS_USER_ACTIONS_IDFA"],  # определения связи между действиями пользователя внутри приложения и ранее размещенной рекламой.
+                  add_id_info_tracks_install: ENV["TRACKS_INSTALL_IDFA"],  # определения связи между установкой приложения и ранее размещенной рекламой;
+                  add_id_info_uses_idfa: ENV["USES_IDFA"],  #В приложении используется рекламный идентификатор (IDFA)?
                   content_rights_has_rights: true,
                   content_rights_contains_third_party_content: false,
                   export_compliance_platform: 'ios',
                   export_compliance_compliance_required: false,
                   export_compliance_encryption_updated: false,
                   export_compliance_app_type: nil,
-                  export_compliance_uses_encryption: false,
+                  export_compliance_uses_encryption: ENV["USES_ENCRYPTION"],
                   export_compliance_is_exempt: false,
                   export_compliance_contains_third_party_cryptography: false,
                   export_compliance_contains_proprietary_cryptography: false,
-                  export_compliance_available_on_french_store: false
+                  export_compliance_available_on_french_store: true
               }}))
           UI.success("✅ Automatic release is set. App will be released in store after AppReview")
         elsif s == "Pending Developer Release"
