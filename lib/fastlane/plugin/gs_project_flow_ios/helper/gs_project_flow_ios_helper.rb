@@ -62,17 +62,34 @@ module Fastlane
         return text
       end
 
-      def self.version_for_lane(lane)
+      def self.version_for_lane(lane, buildState)
         version_name = ""
         if lane == :beta
-          v = Actions::GsGetBetaVersionAction.run(FastlaneCore::Configuration.create(Actions::GsGetBetaVersionAction.available_options,{path: GsProjectFlowIosHelper.get_versions_path}))
+          if buildState == BuildState::FAILURE
+            v = Actions::GsIncrementBetaVersionAction.run(FastlaneCore::Configuration.create(Actions::GsIncrementBetaVersionAction.available_options,{path: GsProjectFlowIosHelper.get_versions_path}))
+          else
+            v = Actions::GsGetBetaVersionAction.run(FastlaneCore::Configuration.create(Actions::GsGetBetaVersionAction.available_options,{path: GsProjectFlowIosHelper.get_versions_path}))
+          end
+
           version_name = v.major.to_s+ "." + v.minor.to_s + "." + v.build.to_s
         elsif lane == :rc
-          v = Actions::GsGetRcVersionAction.run(FastlaneCore::Configuration.create(Actions::GsGetRcVersionAction.available_options,{path: GsProjectFlowIosHelper.get_versions_path}))
+          if buildState == BuildState::FAILURE
+            if ENV['RC_DID_FAILED'] #Если произошла ошибка после отправки в стор
+              v = Actions::GsIncrementRcVersionAction.run(FastlaneCore::Configuration.create(Actions::GsIncrementBetaVersionAction.available_options,{path: GsProjectFlowIosHelper.get_versions_path}))
+            else
+              v = Actions::GsGetRcVersionAction.run(FastlaneCore::Configuration.create(Actions::GsGetBetaVersionAction.available_options,{path: GsProjectFlowIosHelper.get_versions_path}))
+            end
+          else
+            v = Actions::GsGetRcVersionAction.run(FastlaneCore::Configuration.create(Actions::GsGetBetaVersionAction.available_options,{path: GsProjectFlowIosHelper.get_versions_path}))
+          end
           # v = gs_get_rc_version(path: GsProjectFlowIosHelper.get_versions_path)
           version_name = v.major.to_s+ "." + v.minor.to_s
         elsif lane == :release
-          v = Actions::GsGetReleaseVersionAction.run(FastlaneCore::Configuration.create(Actions::GsGetReleaseVersionAction.available_options,{path: GsProjectFlowIosHelper.get_versions_path}))
+          if buildState == BuildState::FAILURE
+            v = Actions::GsIncrementReleaseVersionAction.run(FastlaneCore::Configuration.create(Actions::GsIncrementBetaVersionAction.available_options,{path: GsProjectFlowIosHelper.get_versions_path}))
+          else
+            v = Actions::GsGetReleaseVersionAction.run(FastlaneCore::Configuration.create(Actions::GsGetBetaVersionAction.available_options,{path: GsProjectFlowIosHelper.get_versions_path}))
+          end
           # v = gs_get_release_version(path: GsProjectFlowIosHelper.get_versions_path)
           version_name = v.major.to_s+ "." + v.minor.to_s
         end

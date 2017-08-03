@@ -4,6 +4,7 @@ module Fastlane
       def self.run(params)
         require 'fastlane/plugin/gs_versioning'
         require 'fastlane/plugin/versioning'
+        ENV['RC_DID_FAILED'] = true
 
         fastlaneHelper = Fastlane::Helper::GsProjectFlowIosHelper.new
         arg = FastlaneCore::Configuration.create(GsIncrementRcVersionAction.available_options, {path:Helper::GsProjectFlowIosHelper.get_versions_path})
@@ -55,6 +56,7 @@ module Fastlane
         UI.success("App is released to internal testing")
 
         Actions::GsSaveRcVersionAction.run(FastlaneCore::Configuration.create(GsSaveRcVersionAction.available_options,{version: v, path:Helper::GsProjectFlowIosHelper.get_versions_path}))
+        ENV['RC_DID_FAILED'] = false
 
         Actions::GsExecuteRcLaneAction.moveToReview(version_name)
         UI.success("✅ App status is changed to Waiting For Review")
