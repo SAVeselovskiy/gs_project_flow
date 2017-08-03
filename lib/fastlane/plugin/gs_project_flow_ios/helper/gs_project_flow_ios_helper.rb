@@ -20,6 +20,8 @@ module Fastlane
       end
     end
 
+
+
     class GsProjectFlowIosHelper
       # class methods that you define here become available in your action
       # as `Helper::GsProjectFlowIosHelper.your_method`
@@ -123,9 +125,18 @@ module Fastlane
 
 
           paramsJSON = params.to_json
-          require 'json'
-          Actions::ShAction.run(FastlaneCore::Configuration.create(Actions::ShAction.available_options,
-                                                                   {command:"curl -X POST -H \"Content-Type: application/json\" -d '#{paramsJSON}' http://mobile.geo4.io/bot/releaseBuilder/jobStates"}))
+
+
+          client = Spaceship::GSBotClient.new
+          url = 'jobStates'
+          client.request(:post) do |req|
+            req.url url
+            req.body = paramsJSON
+            req.headers['Content-Type'] = 'application/json'
+          end
+
+          # Actions::ShAction.run(FastlaneCore::Configuration.create(Actions::ShAction.available_options,
+          #                                                          {command:"curl -X POST -H \"Content-Type: application/json\" -d '#{paramsJSON}' http://mobile.geo4.io/bot/releaseBuilder/jobStates"}))
           # sh "sh build_reporter.sh " + chat_id.to_s + " " + message
         # end
       end
