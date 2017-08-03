@@ -105,35 +105,43 @@ module Fastlane
       end
       def self.send_report(message, buildState, lane)
         # Dir.chdir Dir.pwd+"/../../../../" do
-          UI.message(Dir.pwd)
-          params = Hash.new
-          params["state"] = buildState
-          params["alias"] = ENV["ALIAS"]
+        UI.message(Dir.pwd)
+        params = Hash.new
+        params["state"] = buildState
+        params["alias"] = ENV["ALIAS"]
 
-          if buildState == BuildState::FAILURE
-            params["message"] = message
-          end
+        if buildState == BuildState::FAILURE
+          params["message"] = message
+        end
 
-          if lane == :beta
-            params["cmd"] = "beta"
-          elsif lane == :rc
-            params["cmd"] = "rc"
-          elsif lane == :release
-            params["cmd"] = "release"
-          end
-
-
-
-          paramsJSON = params.to_json
+        if lane == :beta
+          params["cmd"] = "beta"
+        elsif lane == :rc
+          params["cmd"] = "rc"
+        elsif lane == :release
+          params["cmd"] = "release"
+        end
 
 
-          client = Spaceship::GSBotClient.new
-          url = 'jobStates'
-          client.request(:post) do |req|
-            req.url url
-            req.body = paramsJSON
-            req.headers['Content-Type'] = 'application/json'
-          end
+
+        paramsJSON = params.to_json
+
+
+        client = Spaceship::GSBotClient.new
+        url = 'jobStates'
+        response = client.request(:post) do |req|
+          req.url url
+          req.body = paramsJSON
+          req.headers['Content-Type'] = 'application/json'
+        end
+
+        if response.success?
+          UI.important('status' + response.status)
+          return response
+        else
+          raise (client.class.hostname + url + ' ' + response.status.to_s + ' ' + response.body['message'])
+        end
+
 
           # Actions::ShAction.run(FastlaneCore::Configuration.create(Actions::ShAction.available_options,
           #                                                          {command:"curl -X POST -H \"Content-Type: application/json\" -d '#{paramsJSON}' http://mobile.geo4.io/bot/releaseBuilder/jobStates"}))
