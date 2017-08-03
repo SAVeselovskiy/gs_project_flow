@@ -2,10 +2,7 @@ module Fastlane
   module Actions
     class GsAfterAllAction < Action
       def self.run(params)
-        action = 'cocoapods'
-
-
-        version_name, v = Helper::GsProjectFlowIosHelper.version_for_lane(params[:lane])
+        version_name, v = Helper::GsProjectFlowIosHelper.version_for_lane(params[:lane],Helper::GsProjectFlowIosHelper::BuildState::SUCCESS)
         message = ENV["PROJECT_NAME"] + " " + version_name + "<pre> build successful.</pre>"
         Helper::GsProjectFlowIosHelper.send_report(message,Helper::GsProjectFlowIosHelper::BuildState::SUCCESS,params[:lane])
         cmd = ""
