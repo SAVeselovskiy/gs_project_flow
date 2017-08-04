@@ -134,7 +134,7 @@ module Fastlane
           req.body = paramsJSON
           req.headers['Content-Type'] = 'application/json'
         end
-
+        UI.important('body ' + paramsJSON)
         if response.success?
           UI.important('status' + response.status)
           return response
