@@ -136,7 +136,7 @@ module Fastlane
         end
         UI.important('body ' + paramsJSON)
         if response.success?
-          UI.important('status' + response.status)
+          UI.important('status' + response.status.to_s)
           return response
         else
           raise (client.class.hostname + url + ' ' + response.status.to_s + ' ' + response.body['message'])
