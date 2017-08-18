@@ -90,8 +90,8 @@ module Fastlane
 
         ruText = Helper::FileHelper.read(Dir.pwd + "/../../notes/" + ENV["ALIAS"] + "/" + version_name + "_Ru.txt")
         enText = Helper::FileHelper.read(Dir.pwd + "/../../notes/" + ENV["ALIAS"] + "/" + version_name + "_En.txt")
-        Helper::FileHelper.write(Dir.pwd+'/metadata/ru/release_notes.txt', ruText)
-        Helper::FileHelper.write(Dir.pwd+'/metadata/en-US/release_notes.txt', enText)
+        Helper::FileHelper.write(Dir.pwd+'/fastlane/metadata/ru/release_notes.txt', ruText)
+        Helper::FileHelper.write(Dir.pwd+'/fastlane/metadata/en-US/release_notes.txt', enText)
         # gym(scheme: ENV["APP_SCHEME"]) # Build your app - more options available
         if s == "Waiting For Review" || s == "Pending Developer Release"
           Actions::GsRejectLatestVersionAction.run(FastlaneCore::Configuration.create(GsRejectLatestVersionAction.available_options,{app_identifier:ENV["BUNDLE_ID"]}))
