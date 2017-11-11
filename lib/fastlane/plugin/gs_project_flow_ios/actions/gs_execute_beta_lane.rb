@@ -38,7 +38,11 @@ module Fastlane
         # end
 
         Actions::GymAction.run(FastlaneCore::Configuration.create(GymAction.available_options,{scheme: ENV["APP_SCHEME"],
-            export_method:"ad-hoc"})) # Build your app - more options available
+            export_method:"ad-hoc", export_options: {
+                provisioningProfiles: {
+                    ENV["BUNDLE_ID"] => "AdHoc "+ENV["ALIAS"]
+                }
+            }})) # Build your app - more options available
 
         Actions::CrashlyticsAction.run(FastlaneCore::Configuration.create(CrashlyticsAction.available_options,{notes: crashlytics_changelog,
                                                                                                        groups: ENV["CRASHLYTICS_GROUPS"]}))

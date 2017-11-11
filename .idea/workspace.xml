@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c9f38fb0-3699-4300-8c01-74361c746933" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_beta_lane.rb" afterPath="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_beta_lane.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_rc_lane.rb" afterPath="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_rc_lane.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/version.rb" afterPath="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/version.rb" />
     </list>
@@ -24,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="version.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="version.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/version.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+            <state relative-caret-position="75">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -37,10 +38,10 @@
       <file leaf-file-name="gs_execute_beta_lane.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_beta_lane.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="203" selection-start-line="16" selection-start-column="203" selection-end-line="16" selection-end-column="203" />
+            <state relative-caret-position="487">
+              <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="59" />
               <folding>
-                <marker date="1501236388000" expanded="true" signature="1710:1946" ph="..." />
+                <marker date="1510400874000" expanded="true" signature="1710:1946" ph="..." />
               </folding>
             </state>
           </provider>
@@ -69,7 +70,7 @@
       <file leaf-file-name="object.rb" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_HOME_DIR$/rubystubs22/object.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="8025">
               <caret line="535" column="8" selection-start-line="535" selection-start-column="8" selection-end-line="535" selection-end-column="8" />
               <folding />
             </state>
@@ -116,11 +117,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gs_execute_rc_lane.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="gs_execute_rc_lane.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_rc_lane.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="133" selection-start-line="22" selection-start-column="133" selection-end-line="22" selection-end-column="133" />
+            <state relative-caret-position="690">
+              <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -139,14 +140,14 @@
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_before_all_action.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_release_action.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_external_runner.rb" />
-        <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_beta_lane.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_after_all_action.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/helper/gs_bot_client.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/helper/gs_project_flow_ios_helper.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_release_lane.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_error_action.rb" />
-        <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_rc_lane.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/version.rb" />
+        <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_beta_lane.rb" />
+        <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_rc_lane.rb" />
       </list>
     </option>
   </component>
@@ -186,7 +187,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -329,6 +329,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -487,18 +488,20 @@
       <workItem from="1502363376979" duration="408000" />
       <workItem from="1503043114824" duration="523000" />
       <workItem from="1503043756219" duration="1630000" />
-      <workItem from="1503571187650" duration="186000" />
+      <workItem from="1503571187650" duration="637000" />
+      <workItem from="1505912568411" duration="1087000" />
+      <workItem from="1510311897638" duration="708000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64342000" />
+    <option name="totallyTimeSpent" value="66588000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18051118" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18370607" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994062" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -574,7 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -599,7 +601,7 @@
         <state relative-caret-position="240">
           <caret line="16" column="203" selection-start-line="16" selection-start-column="203" selection-end-line="16" selection-end-column="203" />
           <folding>
-            <marker date="1501236388000" expanded="true" signature="1710:1946" ph="..." />
+            <marker date="1510400874000" expanded="true" signature="1710:1946" ph="..." />
           </folding>
         </state>
       </provider>
@@ -656,7 +658,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -681,7 +682,7 @@
         <state relative-caret-position="240">
           <caret line="16" column="203" selection-start-line="16" selection-start-column="203" selection-end-line="16" selection-end-column="203" />
           <folding>
-            <marker date="1501236388000" expanded="true" signature="1710:1946" ph="..." />
+            <marker date="1510400874000" expanded="true" signature="1710:1946" ph="..." />
           </folding>
         </state>
       </provider>
@@ -738,7 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -763,7 +763,7 @@
         <state relative-caret-position="240">
           <caret line="16" column="203" selection-start-line="16" selection-start-column="203" selection-end-line="16" selection-end-column="203" />
           <folding>
-            <marker date="1501236388000" expanded="true" signature="1710:1946" ph="..." />
+            <marker date="1510400874000" expanded="true" signature="1710:1946" ph="..." />
           </folding>
         </state>
       </provider>
@@ -819,7 +819,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -879,7 +878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -923,16 +921,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_beta_lane.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="203" selection-start-line="16" selection-start-column="203" selection-end-line="16" selection-end-column="203" />
-          <folding>
-            <marker date="1501236388000" expanded="true" signature="1710:1946" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_external_runner_lane.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -943,24 +931,34 @@
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/rubystubs22/object.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
+        <state relative-caret-position="8025">
           <caret line="535" column="8" selection-start-line="535" selection-start-column="8" selection-end-line="535" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_rc_lane.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="133" selection-start-line="22" selection-start-column="133" selection-end-line="22" selection-end-column="133" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/version.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        <state relative-caret-position="75">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_beta_lane.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="59" />
+          <folding>
+            <marker date="1510400874000" expanded="true" signature="1710:1946" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_rc_lane.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
           <folding />
         </state>
       </provider>
