@@ -43,12 +43,7 @@ module Fastlane
           sh "chmod 744 ./DeleteDerrivedData.sh"
           sh Dir.pwd+"/DeleteDerrivedData.sh"
         # end
-        Actions::GymAction.run(FastlaneCore::Configuration.create(GymAction.available_options,{scheme: ENV["APP_SCHEME"],
-                                                                                               export_method:"app-store"}, export_options: {
-            provisioningProfiles: {
-                ENV["BUNDLE_ID"] => "AppStore "+ENV["ALIAS"]
-            }
-        })) # Build your app - more options available
+        Actions::GymAction.run(FastlaneCore::Configuration.create(GymAction.available_options,{scheme: ENV["APP_SCHEME"], export_method:"app-store", export_options: {provisioningProfiles: {ENV["BUNDLE_ID"] => "AppStore "+ENV["ALIAS"]}}})) # Build your app - more options available
 
 
         s = Actions::GsGetAppStatusAction.run(FastlaneCore::Configuration.create(GsGetAppStatusAction.available_options,{app_identifier:ENV["BUNDLE_ID"]}))
