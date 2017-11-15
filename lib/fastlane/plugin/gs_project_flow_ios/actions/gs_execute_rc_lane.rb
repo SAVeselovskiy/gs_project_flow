@@ -101,7 +101,6 @@ module Fastlane
                                                                                                        skip_binary_upload:true,
                                                                                                        automatic_release:false,
                                                                                                        submission_information: {
-                                                                                                           add_id_info_limits_tracking: ENV["LIMITS_TRACKING"], #в данном приложении, а также в любом связанном с ним стороннем сервисе используется проверка рекламного идентификатора и применяются пользовательские настройки ограничения трекинга рекламы в iOS.
                                                                                                            add_id_info_serves_ads: ENV["IS_ADS_IN_APP_IDFA"],  #Размещение рекламы в приложении
                                                                                                            add_id_info_tracks_action: ENV["TRACKS_USER_ACTIONS_IDFA"],  # определения связи между действиями пользователя внутри приложения и ранее размещенной рекламой.
                                                                                                            add_id_info_tracks_install: ENV["TRACKS_INSTALL_IDFA"],  # определения связи между установкой приложения и ранее размещенной рекламой;
