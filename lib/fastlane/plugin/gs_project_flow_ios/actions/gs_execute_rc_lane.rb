@@ -113,7 +113,6 @@ module Fastlane
                                                                                                            export_compliance_platform: 'ios',
                                                                                                            export_compliance_compliance_required: false,
                                                                                                            export_compliance_encryption_updated: false,
-                                                                                                           export_compliance_app_type: nil,
                                                                                                            export_compliance_uses_encryption: ENV["USES_ENCRYPTION"],
                                                                                                            export_compliance_is_exempt: false,
                                                                                                            export_compliance_contains_third_party_cryptography: false,
