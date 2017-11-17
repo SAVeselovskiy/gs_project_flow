@@ -6,58 +6,58 @@ module Fastlane
         require 'fastlane/plugin/versioning'
         ENV['RC_DID_FAILED'] = 'true'
 
-        # fastlaneHelper = Fastlane::Helper::GsProjectFlowIosHelper.new
-        # arg = FastlaneCore::Configuration.create(GsIncrementRcVersionAction.available_options, {path:Helper::GsProjectFlowIosHelper.get_versions_path})
-        # v = GsIncrementRcVersionAction.run(arg)
-        # version_name = v.major.to_s + "." + v.minor.to_s + "." + v.build.to_s
-        # UI.message('version' + version_name)
-        #
-        # plist_path = Actions::GetInfoPlistPathAction.run(FastlaneCore::Configuration.create(GetInfoPlistPathAction.available_options,{xcodeproj:ENV["xcodeproj"],
-        #                                                                                                                                 target:ENV["target"]}))
-        # Actions::SetInfoPlistValueAction.run(FastlaneCore::Configuration.create(SetInfoPlistValueAction.available_options,{path: plist_path, key: "ITSAppUsesNonExemptEncryption", value: "false"}))
-        #
-        # Actions::IncrementBuildNumberInPlistAction.run(FastlaneCore::Configuration.create(Actions::IncrementBuildNumberInPlistAction.available_options,
-        #                                                                                   {xcodeproj:ENV["xcodeproj"], target:ENV["target"], build_number: v.build.to_s}))
-        #
-        # Actions::IncrementVersionNumberInPlistAction.run(FastlaneCore::Configuration.create(Actions::IncrementVersionNumberInPlistAction.available_options,
-        #                                                                            {version_number: v.major.to_s + "." + v.minor.to_s, xcodeproj: ENV["xcodeproj"], target: ENV["target"]}))
-        #
-        # ruText = fastlaneHelper.generateReleaseNotes("fileClosed", params[:alias], v.major.to_s + "." + v.minor.to_s, "Ru")
-        # enText = fastlaneHelper.generateReleaseNotes("fileClosed", params[:alias], v.major.to_s + "." + v.minor.to_s, "En")
-        #
-        # # ruText = FileHelper.read(Dir.pwd + "/../../../notes/" + ENV["ALIAS"] + "/" + version_name + "_Ru.txt")
-        # # enText = FileHelper.read(Dir.pwd + "/../../../notes/" + ENV["ALIAS"] + "/" + version_name + "_En.txt")
-        # testflight_changelog = ruText + "\n\n" + enText
-        # UI.message("changelog = " + testflight_changelog)
-        #
-        # appDescription = Helper::FileHelper.read (Dir.pwd + "/fastlane/metadata/ru/description.txt")
-        #
-        #
-        #
-        # options = {changelog: testflight_changelog,
-        #            beta_app_description:appDescription,
-        #            distribute_external: false,
-        #            beta_app_feedback_email: "cimobdaemon@gmail.com"}
-        #
-        # # Dir.chdir ".." do
-        #   sh "chmod 744 ./DeleteDerrivedData.sh"
-        #   sh Dir.pwd+"/DeleteDerrivedData.sh"
-        # # end
-        # Actions::GymAction.run(FastlaneCore::Configuration.create(GymAction.available_options,{silent:true, scheme: ENV["APP_SCHEME"], export_method:"app-store", export_options: {provisioningProfiles: {ENV["BUNDLE_ID"] => "AppStore "+ENV["ALIAS"]}}})) # Build your app - more options available
-        #
-        #
-        # s = Actions::GsGetAppStatusAction.run(FastlaneCore::Configuration.create(GsGetAppStatusAction.available_options,{app_identifier:ENV["BUNDLE_ID"]}))
-        # if s == "Pending Developer Release"
-        #   Actions::GsRejectLatestVersionAction.run(FastlaneCore::Configuration.create(GsRejectLatestVersionAction.available_options,{app_identifier:ENV["BUNDLE_ID"]}))
-        # end
-        #
-        # Actions::PilotAction.run(FastlaneCore::Configuration.create(PilotAction.available_options,options))
-        # UI.success("App is released to internal testing")
-        #
-        # Actions::GsSaveRcVersionAction.run(FastlaneCore::Configuration.create(GsSaveRcVersionAction.available_options,{version: v, path:Helper::GsProjectFlowIosHelper.get_versions_path}))
-        # ENV['RC_DID_FAILED'] = 'false'
+        fastlaneHelper = Fastlane::Helper::GsProjectFlowIosHelper.new
+        arg = FastlaneCore::Configuration.create(GsIncrementRcVersionAction.available_options, {path:Helper::GsProjectFlowIosHelper.get_versions_path})
+        v = GsIncrementRcVersionAction.run(arg)
+        version_name = v.major.to_s + "." + v.minor.to_s + "." + v.build.to_s
+        UI.message('version' + version_name)
 
-        version_name = "3" + "." + "5" + "." + "5"
+        plist_path = Actions::GetInfoPlistPathAction.run(FastlaneCore::Configuration.create(GetInfoPlistPathAction.available_options,{xcodeproj:ENV["xcodeproj"],
+                                                                                                                                        target:ENV["target"]}))
+        Actions::SetInfoPlistValueAction.run(FastlaneCore::Configuration.create(SetInfoPlistValueAction.available_options,{path: plist_path, key: "ITSAppUsesNonExemptEncryption", value: "false"}))
+
+        Actions::IncrementBuildNumberInPlistAction.run(FastlaneCore::Configuration.create(Actions::IncrementBuildNumberInPlistAction.available_options,
+                                                                                          {xcodeproj:ENV["xcodeproj"], target:ENV["target"], build_number: v.build.to_s}))
+
+        Actions::IncrementVersionNumberInPlistAction.run(FastlaneCore::Configuration.create(Actions::IncrementVersionNumberInPlistAction.available_options,
+                                                                                   {version_number: v.major.to_s + "." + v.minor.to_s, xcodeproj: ENV["xcodeproj"], target: ENV["target"]}))
+
+        ruText = fastlaneHelper.generateReleaseNotes("fileClosed", params[:alias], v.major.to_s + "." + v.minor.to_s, "Ru")
+        enText = fastlaneHelper.generateReleaseNotes("fileClosed", params[:alias], v.major.to_s + "." + v.minor.to_s, "En")
+
+        # ruText = FileHelper.read(Dir.pwd + "/../../../notes/" + ENV["ALIAS"] + "/" + version_name + "_Ru.txt")
+        # enText = FileHelper.read(Dir.pwd + "/../../../notes/" + ENV["ALIAS"] + "/" + version_name + "_En.txt")
+        testflight_changelog = ruText + "\n\n" + enText
+        UI.message("changelog = " + testflight_changelog)
+
+        appDescription = Helper::FileHelper.read (Dir.pwd + "/fastlane/metadata/ru/description.txt")
+
+
+
+        options = {changelog: testflight_changelog,
+                   beta_app_description:appDescription,
+                   distribute_external: false,
+                   beta_app_feedback_email: "cimobdaemon@gmail.com"}
+
+        # Dir.chdir ".." do
+          sh "chmod 744 ./DeleteDerrivedData.sh"
+          sh Dir.pwd+"/DeleteDerrivedData.sh"
+        # end
+        Actions::GymAction.run(FastlaneCore::Configuration.create(GymAction.available_options,{silent:true, scheme: ENV["APP_SCHEME"], export_method:"app-store", export_options: {provisioningProfiles: {ENV["BUNDLE_ID"] => "AppStore "+ENV["ALIAS"]}}})) # Build your app - more options available
+
+
+        s = Actions::GsGetAppStatusAction.run(FastlaneCore::Configuration.create(GsGetAppStatusAction.available_options,{app_identifier:ENV["BUNDLE_ID"]}))
+        if s == "Pending Developer Release"
+          Actions::GsRejectLatestVersionAction.run(FastlaneCore::Configuration.create(GsRejectLatestVersionAction.available_options,{app_identifier:ENV["BUNDLE_ID"]}))
+        end
+
+        Actions::PilotAction.run(FastlaneCore::Configuration.create(PilotAction.available_options,options))
+        UI.success("App is released to internal testing")
+
+        Actions::GsSaveRcVersionAction.run(FastlaneCore::Configuration.create(GsSaveRcVersionAction.available_options,{version: v, path:Helper::GsProjectFlowIosHelper.get_versions_path}))
+        ENV['RC_DID_FAILED'] = 'false'
+
+        # version_name = "3" + "." + "5" + "." + "5"
 
         Actions::GsExecuteRcLaneAction.moveToReview(version_name)
         UI.success("✅ App status is changed to Waiting For Review")
