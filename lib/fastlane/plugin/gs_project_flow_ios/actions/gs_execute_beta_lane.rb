@@ -19,7 +19,7 @@ module Fastlane
         # Helper::GsProjectFlowIosHelper.new.execute_action('increment_build_version_in_plist', {version_number: v.major.to_s + "." + v.minor.to_s + ".0",
         #                                                                                                                                                                                                      xcodeproj: ENV["xcodeproj"],
         #                                                                                                                                                                                                      target: ENV["target"]})
-        IncrementVersionNumberInPlistAction.run(FastlaneCore::Configuration.create(IncrementVersionNumberInPlistAction.available_options, {version_number: v.major.to_s + "." + v.minor.to_s + ".0", xcodeproj: ENV["xcodeproj"], target: ENV["target"]}))
+        IncrementVersionNumberInPlistAction.run(FastlaneCore::Configuration.create(IncrementVersionNumberInPlistAction.available_options, {version_number: v.major.to_s + "." + v.minor.to_s, xcodeproj: ENV["xcodeproj"], target: ENV["target"]}))
 
         ruText = fastlaneHelper.generateReleaseNotes("fileBeta", params[:alias], version_name, "Ru")
         enText = fastlaneHelper.generateReleaseNotes("fileBeta", params[:alias], version_name, "En")

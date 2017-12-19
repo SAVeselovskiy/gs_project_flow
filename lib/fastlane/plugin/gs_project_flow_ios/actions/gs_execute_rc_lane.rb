@@ -48,14 +48,14 @@ module Fastlane
           Actions::GsRejectLatestVersionAction.run(FastlaneCore::Configuration.create(GsRejectLatestVersionAction.available_options, {app_identifier: ENV["BUNDLE_ID"]}))
         end
         cmd = "mv2rc"
-        options = {
+        bot_options = {
             cmd:cmd,
             displayVersionName:version_name,
             buildNumber:v.build,
             request: "cmd",
             alias: ENV["ALIAS"]
         }
-        Actions::GsExecuteCommandAction.run(FastlaneCore::Configuration.create(GsExecuteCommandAction.available_options,options))
+        Actions::GsExecuteCommandAction.run(FastlaneCore::Configuration.create(GsExecuteCommandAction.available_options,bot_options))
         Actions::PilotAction.run(FastlaneCore::Configuration.create(PilotAction.available_options, options))
         UI.success("App is released to internal testing")
 
