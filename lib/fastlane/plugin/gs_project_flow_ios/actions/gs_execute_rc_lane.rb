@@ -48,9 +48,10 @@ module Fastlane
           Actions::GsRejectLatestVersionAction.run(FastlaneCore::Configuration.create(GsRejectLatestVersionAction.available_options, {app_identifier: ENV["BUNDLE_ID"]}))
         end
         cmd = "mv2rc"
+        version_for_back = v.major.to_s + "." + v.minor.to_s
         bot_options = {
             cmd:cmd,
-            displayVersionName:version_name,
+            displayVersionName:version_for_back,
             buildNumber:v.build,
             request: "cmd",
             alias: ENV["ALIAS"]
