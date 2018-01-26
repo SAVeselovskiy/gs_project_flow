@@ -42,7 +42,8 @@ module Fastlane
                 provisioningProfiles: {
                     ENV["BUNDLE_ID"] => "AdHoc "+ENV["ALIAS"]
                 }
-            }})) # Build your app - more options available
+            }, skip_profile_detection: true
+        })) # Build your app - more options available
 
         Actions::CrashlyticsAction.run(FastlaneCore::Configuration.create(CrashlyticsAction.available_options,{notes: crashlytics_changelog,
                                                                                                        groups: ENV["CRASHLYTICS_GROUPS"]}))
