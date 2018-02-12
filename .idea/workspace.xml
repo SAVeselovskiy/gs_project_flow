@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c9f38fb0-3699-4300-8c01-74361c746933" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/helper/gs_bot_client.rb" afterPath="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/helper/gs_bot_client.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/version.rb" afterPath="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/version.rb" />
     </list>
     <ignored path="fastlane-plugin-gs_project_flow_ios.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,8 +27,8 @@
       <file leaf-file-name="version.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/version.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+            <state relative-caret-position="75">
+              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -45,8 +47,8 @@
       <file leaf-file-name="gs_execute_beta_lane.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_beta_lane.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="45" column="13" lean-forward="false" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+            <state relative-caret-position="345">
+              <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -65,8 +67,8 @@
       <file leaf-file-name="gs_project_flow_ios_helper.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/helper/gs_project_flow_ios_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2190">
-              <caret line="146" column="156" lean-forward="false" selection-start-line="146" selection-start-column="156" selection-end-line="146" selection-end-column="156" />
+            <state relative-caret-position="528">
+              <caret line="42" column="10" lean-forward="false" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -75,8 +77,8 @@
       <file leaf-file-name="gs_bot_client.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/helper/gs_bot_client.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+            <state relative-caret-position="105">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -127,6 +129,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>mobile.geo4.io</find>
+      <find>http:</find>
+      <find>https</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -144,9 +148,9 @@
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_release_lane.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_error_action.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_after_all_action.rb" />
-        <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/helper/gs_bot_client.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_rc_lane.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_beta_lane.rb" />
+        <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/helper/gs_bot_client.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/version.rb" />
       </list>
     </option>
@@ -157,7 +161,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1656" />
     <option name="height" value="1027" />
@@ -180,6 +184,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -223,11 +228,19 @@
               <item name="gs_project_flow_ios" type="462c0819:PsiDirectoryNode" />
               <item name="actions" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="gs_project_flow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gs_project_flow" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="fastlane" type="462c0819:PsiDirectoryNode" />
+              <item name="plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="gs_project_flow_ios" type="462c0819:PsiDirectoryNode" />
+              <item name="helper" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -412,6 +425,9 @@
       <workItem from="1513682965988" duration="633000" />
       <workItem from="1516956047180" duration="980000" />
       <workItem from="1517080366111" duration="30000" />
+      <workItem from="1518436918008" duration="36000" />
+      <workItem from="1518437054342" duration="87000" />
+      <workItem from="1518438274653" duration="27000" />
     </task>
     <task id="LOCAL-00001" summary="v0.4.27">
       <created>1511174752222</created>
@@ -424,15 +440,17 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75820000" />
+    <option name="totallyTimeSpent" value="75970000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1656" height="1027" extended-state="0" />
+    <frame x="0" y="23" width="1920" height="1177" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22490707" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23162939" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3445122" sideWeight="0.50238097" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958478" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298647" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -444,7 +462,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3445122" sideWeight="0.49761903" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958478" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -876,22 +893,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/helper/gs_project_flow_ios_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2190">
-          <caret line="146" column="156" lean-forward="false" selection-start-line="146" selection-start-column="156" selection-end-line="146" selection-end-column="156" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/helper/gs_bot_client.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_rc_lane.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
@@ -902,16 +903,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/actions/gs_execute_beta_lane.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="13" lean-forward="false" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+        <state relative-caret-position="345">
+          <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/helper/gs_project_flow_ios_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="42" column="10" lean-forward="false" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/helper/gs_bot_client.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_project_flow_ios/version.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
