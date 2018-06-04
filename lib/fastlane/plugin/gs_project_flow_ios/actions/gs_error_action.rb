@@ -8,10 +8,10 @@ module Fastlane
           message = ENV["PROJECT_NAME"] + " " + version_name + " build has failed. Reason:\n " + params[:exception].message
 
           UI.important(message)
-          Helper::GsProjectFlowIosHelper.send_report(message,Helper::GsProjectFlowIosHelper::BuildState::FAILURE, params[:lane])
+          Helper::GsProjectFlowIosHelper.send_report(message,Helper::GsProjectFlowIosHelper::BuildState::FAILURE, params[:lane], params[:options][:restart_build_url])
         rescue => ex
           message = "Build has failed on error lane. Reason main lane failed:\n " + params[:exception].message + " \n Reason error lane failed:\n" + ex.message
-          Helper::GsProjectFlowIosHelper.send_report(message,Helper::GsProjectFlowIosHelper::BuildState::FAILURE, params[:lane])
+          Helper::GsProjectFlowIosHelper.send_report(message,Helper::GsProjectFlowIosHelper::BuildState::FAILURE, params[:lane], params[:options][:restart_build_url])
         end
       end
 
@@ -41,7 +41,11 @@ module Fastlane
             FastlaneCore::ConfigItem.new(key: :exception,
                                          description: "A description of your option",
                                          optional: false,
-                                         is_string: false)
+                                         is_string: false),
+            FastlaneCore::ConfigItem.new(key: :options,
+                                         description: "Additional options",
+                                         optional: true,
+                                         type: Object)
         ]
       end
 

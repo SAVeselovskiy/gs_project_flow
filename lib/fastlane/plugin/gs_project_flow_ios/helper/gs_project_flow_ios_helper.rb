@@ -103,7 +103,7 @@ module Fastlane
         SUCCESS = "successful"
         FAILURE = "failed"
       end
-      def self.send_report(message, buildState, lane)
+      def self.send_report(message, buildState, lane, restartBuildURL = nil)
         # Dir.chdir Dir.pwd+"/../../../../" do
         UI.message(Dir.pwd)
         params = Hash.new
@@ -112,6 +112,9 @@ module Fastlane
 
         if buildState == BuildState::FAILURE
           params["message"] = message
+        end
+        if restartBuildURL != nil
+          params["restart_build_url"] = restartBuildURL
         end
 
         if lane == :beta
