@@ -15,14 +15,14 @@ module Fastlane
                      alias: ENV["ALIAS"]
           }
         elsif params[:lane] == :rc
-          # cmd = "mv2rc"
-          # options = {
-          #     cmd:cmd,
-          #     displayVersionName:version_name,
-          #     buildNumber:v.build,
-          #     request: "cmd",
-          #     alias: ENV["ALIAS"]
-          # }
+          cmd = "rc"
+          options = {
+              cmd: cmd,
+              displayVersionName: version_name,
+              buildNumber: v.build,
+              request: "cmd",
+              alias: ENV["ALIAS"]
+          }
         elsif params[:lane] == :release
           cmd = "rc2release"
           options = {cmd:cmd,
